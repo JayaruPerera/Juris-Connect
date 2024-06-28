@@ -19,7 +19,7 @@ const Home = () => {
       <QCard />
       <LVideos />
       <About />
-      <Footer />
+      <Footer /> 
       
     </div>
   )

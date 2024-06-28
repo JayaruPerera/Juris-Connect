@@ -1,10 +1,8 @@
-
-
 import About from "./Pages/About/About";
 import Home from "./Pages/Home/Home";
 import Legalcon from "./Pages/Legalconsultation/Legalcon";
 import Navbar from "./components/Header/Navbar";
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Hero from "./components/Hero/Hero";
 import LVideos from "./components/LVideos/LVideos";
 import QCard from "./components/QCard/QCard";
@@ -16,76 +14,75 @@ import LegalEducation from "./Pages/LegalEducation/LegalEducation";
 import LegalQuestion from "./Pages/LegalQuestion/LegalQuestion";
 import LegalVideos from "./Pages/LegalVideos/LegalVideos";
 import LawyerProfile from "./Pages/LawyerProfile/LawyerProfile";
-
-
+import OpenBlog from "./Pages/BlogNews/OpenBlog/OpenBlog";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Home />,
+    element: <Home />,
   },
   {
     path: "/home",
-    element:<Home />,
+    element: <Home />,
   },
   {
     path: "/legalcon",
-    element:<Legalcon />,
+    element: <Legalcon />,
   },
   {
     path: "/about",
-    element:<About />,
+    element: <About />,
   },
   {
     path: "/hero",
-    element:<Hero />,
+    element: <Hero />,
   },
   {
     path: "/lvideos",
-    element:<LVideos />,
+    element: <LVideos />,
   },
   {
     path: "/qcard",
-    element:<QCard />,
+    element: <QCard />,
   },
   {
     path: "/searchbar",
-    element:<SearchBar />,
+    element: <SearchBar />,
   },
   {
     path: "/subheader",
-    element:<SubHeader />,
+    element: <SubHeader />,
   },
   {
     path: "/blognews",
-    element:<BlogNews />,
+    element: <BlogNews />,
+  },
+  {
+    path: "/blognews/openblog",
+    element: <OpenBlog />,
   },
   {
     path: "/lawyers",
-    element:<Lawyers />,
+    element: <Lawyers />,
   },
   {
     path: "/legaleducation",
-    element:<LegalEducation />,
+    element: <LegalEducation />,
   },
   {
     path: "/legalquestion",
-    element:<LegalQuestion />,
-  }, 
+    element: <LegalQuestion />,
+  },
   {
     path: "/legalvideos",
-    element:<LegalVideos />,
+    element: <LegalVideos />,
   },
   {
     path: "/lawyerprofile",
-    element:<LawyerProfile />,
-  }
-
-
+    element: <LawyerProfile />,
+  },
 ]);
 function App() {
-  
-
   return (
     <div>
       <RouterProvider router={router} />
@@ -93,4 +90,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
