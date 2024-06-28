@@ -23,7 +23,7 @@ export default function Legalcon(){
         </div>
       </div>
       <section>
-        <form>
+        <form className='legalcon'>
           <h2> Describe your situation</h2>
           <h3>Ready to submit your question? Here's what we need from you</h3>
           <div className='box'> 
