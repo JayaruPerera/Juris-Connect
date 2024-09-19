@@ -1,6 +1,10 @@
+// <<<<<<< HEAD
 import React from "react";
 import img1 from "../../assets/video1.jpg";
 import "../LawyerDetails/LawyerDetails.css";
+// =======
+
+// >>>>>>> 18b7d69f4d38e2816eed0afc1dadc5bcb66a5339
 
 const LawyerDetails = () => {
   return (

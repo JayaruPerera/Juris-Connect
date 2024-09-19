@@ -8,11 +8,11 @@ import LegalQCard from '../../components/LegalQuestions/LegalQCard/LegalQCard'
 function LegalQuestion() {
   return (
     <div className='legal_question'>
-      <Navbar />
+      {/* <Navbar /> */}
       <LegalQHero />
       <LegalQCard />
-      <Footer />
-    /</div>
+      {/* <Footer /> */}
+    </div>
   )
 }
 

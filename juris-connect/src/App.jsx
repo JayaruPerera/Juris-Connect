@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import React, { useState } from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
 
 import About from "./Pages/About/About";
 import Home from "./Pages/Home/Home";
@@ -21,15 +21,12 @@ import LawyerProfile from "./Pages/LawyerProfile/LawyerProfile";
 import LawyerDetails from "./Pages/LawyerDetails/LawyerDetails";
 import BookAppointment from "./Pages/BookingAppointment/BookingAppointment";
 import ReviewsRatings from "./Pages/ReviewsRating/ReviewsRating";
-import Login from './components/Login/Login'
+import Login from "./components/Login/Login";
 import NavBar from "./components/Header/Navbar";
-import Footer from './components/Footer/Footer';
-import UserSignIn from './Pages/UserSignIn/UserSignIn';
-import LawyerSignIn from './Pages/LawyerSignIn/LawyerSignIn';
-import SignupOption from './components/SignupOption/SignupOption';
-
-
-
+import Footer from "./components/Footer/Footer";
+import UserSignIn from "./Pages/UserSignIn/UserSignIn";
+import LawyerSignIn from "./Pages/LawyerSignIn/LawyerSignIn";
+import SignupOption from "./components/SignupOption/SignupOption";
 
 // const router = createBrowserRouter([
 //   { path: "/", element:<Home />, },
@@ -44,7 +41,7 @@ import SignupOption from './components/SignupOption/SignupOption';
 //   { path: "/blognews", element:<BlogNews />, },
 //   { path: "/lawyers", element:<Lawyers />, },
 //   { path: "/legaleducation", element:<LegalEducation />, },
-//   { path: "/legalquestion", element:<LegalQuestion />, }, 
+//   { path: "/legalquestion", element:<LegalQuestion />, },
 //   { path: "/legalvideos", element:<LegalVideos />, },
 //   {
 //     path: "/lawyerprofile",
@@ -62,7 +59,7 @@ import SignupOption from './components/SignupOption/SignupOption';
 //         path: "reviewsratings",
 //         element: <ReviewsRatings />,
 //       },
-    
+
 //      ],
 //   },
 
@@ -79,28 +76,29 @@ import SignupOption from './components/SignupOption/SignupOption';
 
 // export default App
 
-
 const App = () => {
-
-  const [showLogin,setLogin] = useState(false);
+  const [showLogin, setLogin] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   return (
     <>
-    {showLogin?<Login setlogin={setLogin} />:<></>}
+      {showLogin ? <Login setlogin={setLogin} /> : <></>}
 
-      <div className='app' data-theme="light">
-
-        <NavBar setLogin={setLogin} />
+      <div className="app" data-theme={isDark ? "light" : "dark"}>
+        <NavBar
+          setLogin={setLogin}
+          isCheckedtest={isDark}
+          handleChangetest={() => setIsDark(!isDark)}
+        />
 
         <Routes>
-          
-          <Route path='/' element={<Home />} />
-          <Route path='/legal_consultation' element={<Legalcon />} />
-          <Route path='/legal_education' element={<LegalEducation />} />
-          <Route path='/lawyers' element={<Lawyers />} />
-          <Route path='/legal_questions' element={<LegalQuestion />} />
-          <Route path='/blogs_news' element={<BlogNews />} />
-          <Route path='/lawyer_videos' element={<LegalVideos />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/legalcon" element={<Legalcon />} />
+          <Route path="/legal_education" element={<LegalEducation />} />
+          <Route path="/lawyers" element={<Lawyers />} />
+          <Route path="/legal_questions" element={<LegalQuestion />} />
+          <Route path="/blogs_news" element={<BlogNews />} />
+          <Route path="/lawyer_videos" element={<LegalVideos />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<Home />} />
@@ -110,24 +108,20 @@ const App = () => {
           <Route path="/searchbar" element={<SearchBar />} />
           <Route path="/subheader" element={<SubHeader />} />
 
-          <Route 
-            path="/lawyerprofile" 
-            element={<LawyerProfile />} 
-          >
+          <Route path="/lawyerprofile" element={<LawyerProfile />}>
             <Route path="lawyerdetails" element={<LawyerDetails />} />
             <Route path="bookappointment" element={<BookAppointment />} />
             <Route path="reviewsratings" element={<ReviewsRatings />} />
           </Route>
 
-          <Route path='usersignin' element={<UserSignIn />} />
-          <Route path='lawyaersignin' element={<LawyerSignIn />} />
-
+          <Route path="usersignin" element={<UserSignIn />} />
+          <Route path="lawyaersignin" element={<LawyerSignIn />} />
         </Routes>
 
         <Footer />
       </div>
-    </> 
-  )
-}
+    </>
+  );
+};
 
-export default App
+export default App;
