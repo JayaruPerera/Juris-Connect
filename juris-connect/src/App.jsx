@@ -27,6 +27,7 @@ import Footer from "./components/Footer/Footer";
 import UserSignIn from "./Pages/UserSignIn/UserSignIn";
 import LawyerSignIn from "./Pages/LawyerSignIn/LawyerSignIn";
 import SignupOption from "./components/SignupOption/SignupOption";
+import ChatBot from "./components/Chatbot/chatbot";
 
 // const router = createBrowserRouter([
 //   { path: "/", element:<Home />, },
@@ -92,7 +93,14 @@ const App = () => {
         />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Home /> <ChatBot />{" "}
+              </>
+            }
+          />
           <Route path="/legalcon" element={<Legalcon />} />
           <Route path="/legal_education" element={<LegalEducation />} />
           <Route path="/lawyers" element={<Lawyers />} />
